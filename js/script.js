@@ -144,7 +144,7 @@ document.querySelectorAll('.work-card').forEach(card => {
 // or push straight to GitHub Pages. If the live call ever fails (offline,
 // cold start, rate limit), it silently falls back to the same static
 // matching, so the widget never breaks for a visitor.
-const ASK_API_URL = ''; // e.g. 'https://your-project.vercel.app/api/ask'
+const ASK_API_URL = 'https://yug-portfolio-ask-api.vercel.app/api/ask';
 const ASK_TIMEOUT_MS = 12000;
 
 const ASK_KB = [
