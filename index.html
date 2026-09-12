@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yug Sharma — Backend Engineer</title>
+<meta name="description" content="Yug Sharma — Backend Engineer specializing in Java, Node.js, microservices and event-driven systems. Currently exploring Generative AI." />
+<meta name="theme-color" content="#050505" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- Custom icon set — hand-drawn abstractions, not literal brand marks -->
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="icon-java" viewBox="0 0 24 24">
+      <path d="M7 12c0 3 2 5 5 5s5-2 5-5" stroke="#E76F00" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M6 12h12v2a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-2z" stroke="#E76F00" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+      <path d="M9 4c-1 1-1 2 0 3M13 4c-1 1-1 2 0 3" stroke="#E76F00" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-js" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="4" fill="#F7DF1E"/>
+      <text x="12" y="16.5" font-size="9" font-family="monospace" font-weight="700" text-anchor="middle" fill="#111111">JS</text>
+    </symbol>
+    <symbol id="icon-node" viewBox="0 0 24 24">
+      <path d="M12 2 L21 7 V17 L12 22 L3 17 V7 Z" fill="none" stroke="#539E43" stroke-width="1.8" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-spring" viewBox="0 0 24 24">
+      <path d="M4 20c8 0 14-6 16-16-10 0-16 8-16 16z" fill="none" stroke="#6DB33F" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M6 18c4-4 8-8 12-14" fill="none" stroke="#6DB33F" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-mongo" viewBox="0 0 24 24">
+      <path d="M12 2c4 4 6 8 6 12a6 6 0 0 1-12 0c0-4 2-8 6-12z" fill="none" stroke="#47A248" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M12 6v14" stroke="#47A248" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-mysql" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#4479A1" stroke-width="1.8"/>
+      <path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6" fill="none" stroke="#4479A1" stroke-width="1.8"/>
+      <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" fill="none" stroke="#4479A1" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="icon-redis" viewBox="0 0 24 24">
+      <path d="M12 3 L20 6.5 L12 10 L4 6.5 Z" fill="#912626"/>
+      <path d="M12 8.2 L20 11.7 L12 15.2 L4 11.7 Z" fill="#C6302B"/>
+      <path d="M12 13.4 L20 16.9 L12 20.4 L4 16.9 Z" fill="#DC382D"/>
+    </symbol>
+    <symbol id="icon-kafka" viewBox="0 0 24 24">
+      <path d="M6 3v18" stroke="#22D3EE" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M6 12L18 3M6 12l12 9" fill="none" stroke="#22D3EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-rabbitmq" viewBox="0 0 24 24">
+      <path d="M8 10V4a1.5 1.5 0 0 1 3 0v5M13 10V4a1.5 1.5 0 0 1 3 0v6" fill="none" stroke="#FF6600" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="12" cy="14" r="5" fill="none" stroke="#FF6600" stroke-width="1.8"/>
+      <circle cx="10" cy="13" r="0.7" fill="#FF6600"/>
+      <circle cx="14" cy="13" r="0.7" fill="#FF6600"/>
+    </symbol>
+    <symbol id="icon-aws" viewBox="0 0 24 24">
+      <path d="M6 16a4 4 0 0 1 .5-8 5 5 0 0 1 9.5 1.5A3.5 3.5 0 0 1 17.5 16H6z" fill="none" stroke="#FF9900" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M7 19c3 1.4 7 1.4 10 0" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="icon-docker" viewBox="0 0 24 24">
+      <rect x="3" y="11" width="4" height="4" fill="#2496ED"/>
+      <rect x="8" y="11" width="4" height="4" fill="#2496ED"/>
+      <rect x="13" y="11" width="4" height="4" fill="#2496ED"/>
+      <rect x="8" y="6" width="4" height="4" fill="#2496ED"/>
+      <path d="M2 15c0 4 4 6 9 6 6 0 10-3 11-7-1 .5-2 .5-3 0-1 1-2 1-3 .5" fill="none" stroke="#2496ED" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-nginx" viewBox="0 0 24 24">
+      <path d="M4 18V9l8-5 8 5v9" fill="none" stroke="#009639" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8 18v-6l4-2.4 4 2.4v6" fill="none" stroke="#009639" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-git" viewBox="0 0 24 24">
+      <circle cx="6" cy="6" r="2" fill="none" stroke="#F05033" stroke-width="1.8"/>
+      <circle cx="6" cy="18" r="2" fill="none" stroke="#F05033" stroke-width="1.8"/>
+      <circle cx="17" cy="12" r="2" fill="none" stroke="#F05033" stroke-width="1.8"/>
+      <path d="M6 8v8M6 12c4 0 6-2 9-2" fill="none" stroke="#F05033" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="icon-cicd" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8" fill="none" stroke="#2088FF" stroke-width="1.8"/>
+      <path d="M9 12l2 2 4-4" fill="none" stroke="#2088FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-flag-in" viewBox="0 0 24 16">
+      <rect x="0" y="0" width="24" height="16" rx="2" fill="#fff"/>
+      <rect x="0.7" y="0.7" width="22.6" height="4.5" fill="#FF9933"/>
+      <rect x="0.7" y="10.8" width="22.6" height="4.5" fill="#138808"/>
+      <circle cx="12" cy="8" r="2.1" fill="none" stroke="#000080" stroke-width="0.55"/>
+      <circle cx="12" cy="8" r="0.45" fill="#000080"/>
+      <rect x="0.25" y="0.25" width="23.5" height="15.5" rx="1.8" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="0.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">YS<span class="dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-nav>About</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#work" data-nav>Work</a>
+      <a href="#learning" data-nav>Learning</a>
+      <a href="#ask" data-nav>Ask</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="assets/Yug_Sharma_Resume.pdf" class="btn btn-ghost" download>Resume</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-text" data-reveal>
+      <p class="eyebrow"><span class="pulse-dot"></span> Available for opportunities · Remote &amp; Onsite</p>
+      <h1>
+        Hi, I'm <span class="grad-text">Yug Sharma</span>
+      </h1>
+      <h2 class="hero-role">
+        <span id="typed"></span><span class="cursor-blink">|</span>
+      </h2>
+      <p class="hero-desc">
+        I build backend systems that don't fall over — microservices, event streaming with Kafka,
+        and ACID-tight transactional workflows across Java/Spring and Node.js. 5 years in,
+        and currently going deep on <strong>Generative AI</strong> on the side.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+        <a href="assets/Yug_Sharma_Resume.pdf" class="btn btn-text" download>↓ Download Resume</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/yug-sharma/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:yugsharma4499@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <div class="hero-photo" data-reveal>
+      <div class="photo-frame">
+        <img src="assets/profile.jpg" alt="Portrait of Yug Sharma" />
+        <div class="photo-ring"></div>
+      </div>
+      <div class="floating-card card-1">
+        <span class="fc-num">5+</span>
+        <span class="fc-label">Years Backend Eng.</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span></span>
+  </a>
+</section>
+
+<!-- ================= MINDSET QUOTE ================= -->
+<section class="quote-section" id="mindset">
+  <div class="container">
+    <blockquote class="pull-quote" data-reveal>
+      Curious about systems. Passionate about building. <span class="quote-accent">Focused on shipping.</span>
+    </blockquote>
+    <p class="quote-attribution">— The short version of how I work</p>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container">
+    <p class="section-tag" data-reveal>01 · About</p>
+    <h2 class="section-title" data-reveal>Backend engineer by trade, always building.</h2>
+    <div class="about-grid">
+      <p class="about-text" data-reveal>
+        I'm a Backend Engineer with 5 years of experience building production-grade systems in
+        <strong>Java</strong> and <strong>Node.js</strong>. My work lives at the intersection of
+        microservices architecture, Kafka-driven event streaming, distributed caching with Redis,
+        and ACID-compliant transactional workflows across Spring Boot and Express.js stacks.
+        <br /><br />
+        I like owning systems end-to-end — from designing the data model to shipping the CI/CD pipeline
+        that deploys it — and I care a lot about performance, reliability, and making complex systems
+        easy for the next engineer to reason about.
+        <br /><br />
+        Outside of day-to-day delivery, I'm currently going deep on <strong>Generative AI</strong> —
+        LLMs, RAG, agentic systems — applying the same systems-thinking that's shaped five years
+        of backend work to a new class of problems.
+      </p>
+      <div class="about-stats" data-reveal>
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Years of experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="40">0</span>
+          <span class="stat-suffix">%</span>
+          <span class="stat-label">Avg. reduction in billing discrepancies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="200">0</span>
+          <span class="stat-suffix">k+</span>
+          <span class="stat-label">Records migrated, zero downtime</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-suffix"></span>
+          <span class="stat-label">Companies, one steady climb</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <p class="section-tag" data-reveal>02 · Toolkit</p>
+    <h2 class="section-title" data-reveal>What I build with.</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card" data-reveal>
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-java"></use></svg>Java 8/11+</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-js"></use></svg>JavaScript (ES6+)</span>
+          <span>SQL</span>
+        </div>
+      </div>
+      <div class="skill-card" data-reveal>
+        <h3>Frameworks &amp; Runtime</h3>
+        <div class="tags">
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-spring"></use></svg>Spring Boot</span>
+          <span>Spring MVC</span><span>Spring Security (JWT)</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-node"></use></svg>Node.js</span>
+          <span>Express.js</span>
+        </div>
+      </div>
+      <div class="skill-card" data-reveal>
+        <h3>Databases &amp; Messaging</h3>
+        <div class="tags">
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-mongo"></use></svg>MongoDB</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-mysql"></use></svg>MySQL</span>
+          <span>MSSQL</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-redis"></use></svg>Redis</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-kafka"></use></svg>Apache Kafka</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-rabbitmq"></use></svg>RabbitMQ</span>
+        </div>
+      </div>
+      <div class="skill-card" data-reveal>
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="tags">
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-aws"></use></svg>AWS (EC2, S3, SQS)</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-docker"></use></svg>Docker</span>
+          <span>Maven</span><span>PM2</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-nginx"></use></svg>Nginx</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-cicd"></use></svg>GitHub Actions CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-card" data-reveal>
+        <h3>Architecture &amp; Patterns</h3>
+        <div class="tags">
+          <span>Microservices</span><span>Event-Driven</span><span>REST APIs</span>
+          <span>SOLID</span><span>CQRS</span><span>Saga</span><span>State Machine</span>
+        </div>
+      </div>
+      <div class="skill-card" data-reveal>
+        <h3>Testing &amp; Tools</h3>
+        <div class="tags">
+          <span>Jest</span><span>Supertest</span><span>JUnit</span>
+          <span>Swagger/OpenAPI</span><span>Postman</span>
+          <span class="tag-icon"><svg class="tech-icon"><use href="#icon-git"></use></svg>Git</span>
+          <span>Jira</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="section" id="experience">
+  <div class="container">
+    <p class="section-tag" data-reveal>03 · Experience</p>
+    <h2 class="section-title" data-reveal>Where I've shipped things that mattered.</h2>
+    <p class="section-sub" data-reveal>
+      The stack has changed less than the judgment behind it. TCS taught me to work inside
+      constraints I didn't set. MWB taught me to own a system beginning to end. Lifemaan is
+      teaching me that the expensive bugs are never the code — they're the assumption baked
+      into a workflow nobody thought to question. Here's that arc, role by role.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item" data-reveal>
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <div class="tl-head">
+            <h3>Senior Software Developer</h3>
+            <span class="tl-date">Nov 2024 — Present</span>
+          </div>
+          <p class="tl-company">Lifemaan · Surat, Gujarat</p>
+          <ul>
+            <li>Rebuilt pharmacy billing as its own isolated microservice — separate database, separate auth boundary — so a slow query or bug there could never take down anything else. At the core sits a two-stage <strong>DRAFT → CONFIRM</strong> state machine: a bill is created editable, in DRAFT, while stock, pricing and insurance checks run in the background, and only becomes a locked, final record once every check clears. That one guardrail is what actually moved the needle on the 40% drop in billing discrepancies — almost every dispute we used to see traced back to a bill that got finalized before validation had caught up.</li>
+            <li>Swapped a tightly-coupled, synchronous prescription-to-pharmacy flow for a Kafka pipeline: partitioned consumer groups process orders per branch in parallel while keeping order within a branch, so stock checks and order creation no longer block on each other.</li>
+            <li>Went hunting for slow paths across the stack — cache-aside with TTL invalidation cut drug-catalog DB reads ~40%, distributed Redis locks stopped two billers from confirming the same stock at once, and re-tuning indexes against real <code>explain()</code> output cut reporting latency ~45%.</li>
+            <li>Took on a data-integrity project nobody wanted: unifying 70,000+ drug records into a clean 200k-record master list without breaking a single existing reference. Shipped alongside it a 31-flag rollout system so changes could go live one clinic at a time instead of all-or-nothing.</li>
+            <li>Mentored two junior engineers on API design and reviews, cutting PR round-trips ~30%. Outside of delivery work, I keep a standing habit of daily <strong>DSA practice</strong> — arrays, graphs, DP, system design — mostly to keep the problem-solving muscle sharp for the harder architecture calls.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <div class="tl-head">
+            <h3>Software Developer</h3>
+            <span class="tl-date">Mar 2023 — Nov 2024</span>
+          </div>
+          <p class="tl-company">MWB Technologies · Hubballi, Karnataka</p>
+          <ul>
+            <li>Owned Node.js backend work across three products at once — Tirth, Master Portal, Easy Stock — and rethought the database schemas behind them, which alone accounted for a 35% jump in system performance.</li>
+            <li>Built the subscription and wallet APIs the company's revenue actually runs on, plus the SQL procedures and MongoDB aggregations behind the analytics dashboards leadership used to track it.</li>
+            <li>Replaced manual notification work with cron-driven automation and shipped revenue-analysis tooling that cut day-to-day operational overhead by roughly a quarter.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <div class="tl-head">
+            <h3>Assistant System Engineer</h3>
+            <span class="tl-date">May 2021 — Sep 2022</span>
+          </div>
+          <p class="tl-company">Tata Consultancy Services · Gandhinagar, Gujarat</p>
+          <ul>
+            <li>Carried a banking client's SAP Portal through its full lifecycle — specs, coding, integration testing — and coordinated go-live with the AWS team on the other side.</li>
+            <li>Added two-factor authentication where the app had none, and reworked React components with memoization that shaved ~20% off load times.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SELECTED WORK ================= -->
+<section class="section section-alt" id="work">
+  <div class="container">
+    <p class="section-tag" data-reveal>04 · Selected Work</p>
+    <h2 class="section-title" data-reveal>Systems worth talking about.</h2>
+
+    <div class="work-grid">
+      <article class="work-card" data-reveal>
+        <div class="work-card-glow"></div>
+        <span class="work-index">01</span>
+        <h3>Pharmacy Microservice Platform</h3>
+        <p>Built around one rule: nothing gets billed until it's actually correct. A bill lives as an
+        editable DRAFT while stock, pricing and insurance checks run behind it, and only flips to a
+        locked CONFIRM record once every check clears. Almost every billing dispute we used to see
+        came from a bill finalized before validation caught up — this is what fixed that.</p>
+        <div class="tags">
+          <span>Spring Boot</span><span>MongoDB</span><span>State Machine</span><span>JWT</span>
+        </div>
+        <div class="work-metrics">
+          <span>−40% billing discrepancies</span>
+        </div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <div class="work-card-glow"></div>
+        <span class="work-index">02</span>
+        <h3>Kafka Event-Streaming Pipeline</h3>
+        <p>Real-time prescription-to-pharmacy order flow using consumer groups with partition-level
+        parallelism for ordered, per-branch async processing — no more synchronous coupling.</p>
+        <div class="tags">
+          <span>Apache Kafka</span><span>Event-Driven</span><span>Node.js</span>
+        </div>
+        <div class="work-metrics">
+          <span>Async stock validation at scale</span>
+        </div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <div class="work-card-glow"></div>
+        <span class="work-index">03</span>
+        <h3>Drug-Master Unification &amp; OPD 2.0</h3>
+        <p>Migrated 70,000+ records with ID preservation into a 200,000-record single source of truth,
+        and built a dynamic clinical form engine with recursive sub-field discovery.</p>
+        <div class="tags">
+          <span>MongoDB</span><span>Migrations</span><span>Feature Flags</span>
+        </div>
+        <div class="work-metrics">
+          <span>Zero-downtime schema evolution</span>
+        </div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <div class="work-card-glow"></div>
+        <span class="work-index">04</span>
+        <h3>Redis-Backed Reliability Layer</h3>
+        <p>Cache-aside with TTL invalidation for catalog lookups, distributed locks against concurrent
+        billing conflicts, and dead-letter job queues with exponential backoff for zero message loss.</p>
+        <div class="tags">
+          <span>Redis</span><span>Pub/Sub</span><span>Distributed Locks</span>
+        </div>
+        <div class="work-metrics">
+          <span>−45% reporting latency</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CURRENTLY LEARNING ================= -->
+<section class="section learning-section" id="learning">
+  <div class="container">
+    <p class="section-tag" data-reveal>05 · Right now</p>
+    <h2 class="section-title" data-reveal>What I'm building toward next.</h2>
+    <p class="section-sub" data-reveal>
+      5 years of backend fundamentals is the base — right now I'm layering Generative AI on top of it,
+      applying the same systems-thinking I use for distributed backends to AI-native products.
+    </p>
+
+    <div class="learning-grid learning-grid-single">
+      <div class="learning-card" data-reveal>
+        <div class="learning-icon">✦</div>
+        <h3>Generative AI</h3>
+        <p>Going deep on LLM fundamentals, prompt engineering, RAG pipelines, and agentic workflows —
+        the same instinct for reliability, state and edge cases that shaped my backend work, now
+        pointed at AI-native systems.</p>
+        <ul class="learning-tags">
+          <li>LLM Fundamentals</li>
+          <li>Prompt Engineering</li>
+          <li>RAG Pipelines</li>
+          <li>Vector Databases</li>
+          <li>LangChain</li>
+          <li>Agentic Workflows</li>
+        </ul>
+        <div class="progress-track"><div class="progress-fill" data-progress="55"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="section section-alt" id="education">
+  <div class="container">
+    <p class="section-tag" data-reveal>06 · Education</p>
+    <div class="edu-card" data-reveal>
+      <div>
+        <h3>Bachelor of Technology in Engineering</h3>
+        <p class="tl-company">Birla Vishvakarma Mahavidyalaya, Anand, Gujarat</p>
+      </div>
+      <div class="edu-meta">
+        <span>May 2021</span>
+        <span class="edu-cgpa">CGPA 8.8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ASK MY PORTFOLIO (RAG-lite demo) ================= -->
+<section class="section ask-section" id="ask">
+  <div class="container">
+    <p class="section-tag" data-reveal>07 · Ask</p>
+    <h2 class="section-title" data-reveal>Ask my portfolio something.</h2>
+    <p class="section-sub" data-reveal>
+      A Q&amp;A engine built on my own experience data — ask about my work, my stack, or how to
+      reach me. It answers with a live language model when one's connected, and falls back to a
+      fast local knowledge base otherwise, so it never breaks. Try it.
+    </p>
+
+    <div class="ask-widget" data-reveal>
+      <span class="ask-status" id="askStatus">📚 Offline demo — static knowledge base</span>
+      <div class="ask-log" id="askLog" aria-live="polite">
+        <div class="ask-msg ask-msg-bot">
+          <span class="ask-avatar">YS</span>
+          <p>Hi — ask me about my Kafka work, the DRAFT→CONFIRM billing flow, remote availability,
+          or how to reach me. I'll answer from what I actually know.</p>
+        </div>
+      </div>
+      <div class="ask-chips" id="askChips">
+        <button type="button" class="ask-chip">What's your Kafka experience?</button>
+        <button type="button" class="ask-chip">Open to remote roles?</button>
+        <button type="button" class="ask-chip">What's DRAFT→CONFIRM?</button>
+        <button type="button" class="ask-chip">What's your biggest achievement?</button>
+        <button type="button" class="ask-chip">What are you looking for next?</button>
+        <button type="button" class="ask-chip">How do I contact you?</button>
+      </div>
+      <form class="ask-form" id="askForm">
+        <input type="text" id="askInput" placeholder="Ask about my experience, skills, or how to reach me…" autocomplete="off" aria-label="Ask my portfolio a question" />
+        <button type="submit" class="btn btn-primary">Ask</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <p class="section-tag" data-reveal>08 · Contact</p>
+    <h2 class="section-title big" data-reveal>Let's build something<br />worth shipping.</h2>
+    <p class="section-sub" data-reveal>
+      Open to backend engineering roles and interesting conversations about systems, AI, or both.
+    </p>
+    <div class="contact-actions" data-reveal>
+      <a href="mailto:yugsharma4499@gmail.com" class="btn btn-primary btn-lg">yugsharma4499@gmail.com</a>
+    </div>
+    <div class="contact-links" data-reveal>
+      <a href="tel:+919558628663">+91 95586 28663</a>
+      <a href="https://www.linkedin.com/in/yug-sharma/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="assets/Yug_Sharma_Resume.pdf" download>Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span id="footerNote">© <span id="year"></span> Yug Sharma. Still debugging. Still curious.</span>
+    <span class="footer-location"><svg class="flag-icon"><use href="#icon-flag-in"></use></svg> India</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
