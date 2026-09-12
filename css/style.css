@@ -115,6 +115,24 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .btn-text:hover { color: var(--accent-2); border-bottom-color: var(--accent-2); transform: none; }
 
+.btn-resume {
+  border: 1.5px solid var(--accent-2); color: var(--accent-2); background: rgba(34,211,238,0.06);
+}
+.btn-resume:hover {
+  background: var(--accent-2); color: #05050a; transform: translateY(-2px);
+  box-shadow: 0 10px 30px -8px rgba(34,211,238,0.5);
+}
+.btn-icon { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* ---------- social / contact pills ---------- */
+.social-pill {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500;
+  color: var(--text); padding: 9px 16px; border: 1px solid var(--border); border-radius: 999px;
+  background: var(--surface, rgba(255,255,255,0.03)); transition: all 0.25s ease;
+}
+.social-pill:hover { border-color: var(--accent-2); color: var(--accent-2); transform: translateY(-2px); }
+.social-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
 /* ================= HERO ================= */
 .hero {
   position: relative; min-height: 100vh; display: flex; align-items: center;
@@ -176,11 +194,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-desc { max-width: 560px; color: var(--text-dim); font-size: 1.05rem; margin-bottom: 34px; }
 .hero-desc strong { color: var(--text); font-weight: 600; }
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
-.hero-social { display: flex; gap: 24px; }
-.hero-social a { font-size: 0.9rem; color: var(--text-faint); position: relative; }
-.hero-social a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 1px; background: var(--text); transition: width 0.25s ease; }
-.hero-social a:hover { color: var(--text); }
-.hero-social a:hover::after { width: 100%; }
+.hero-social { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .hero-photo { position: relative; display: flex; justify-content: center; }
 .photo-frame {
@@ -434,11 +448,7 @@ a:focus-visible, button:focus-visible {
 .contact-section { text-align: center; }
 .contact-section .section-tag, .contact-section .section-title, .contact-section .section-sub { margin-left: auto; margin-right: auto; }
 .contact-actions { margin: 20px 0 34px; }
-.contact-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.contact-links a { color: var(--text-dim); font-size: 0.95rem; position: relative; }
-.contact-links a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 1px; background: var(--accent-2); transition: width 0.25s ease; }
-.contact-links a:hover { color: var(--text); }
-.contact-links a:hover::after { width: 100%; }
+.contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
 /* ================= FOOTER ================= */
 .footer { border-top: 1px solid var(--border); padding: 28px 0; }
